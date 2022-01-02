@@ -1,0 +1,82 @@
+theme = "nord-dark"
+icons = "awesome"
+
+[[block]]
+block = "custom"
+command = "sh /home/lerusse/.config/i3status-rust/scripts/openvpn-status.sh"
+
+[[block]]
+block = "bluetooth"
+mac = "C4:6E:7B:22:53:CF"
+#format = " "
+format_unavailable = " error"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "used"
+format = "/: {percentage}"
+unit = "GB"
+interval = 20
+alert = 90
+warning = 75
+[block.theme_overrides]
+idle_bg = "#d79921"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "disk_space"
+path = "/home"
+alias = "/home"
+info_type = "used"
+format = "/home: {percentage}"
+unit = "GB"
+interval = 20
+alert = 90
+warning = 75
+[block.theme_overrides]
+idle_bg = "#d79921"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "disk_space"
+path = "/home/lerusse/Documents"
+info_type = "used"
+format = "/Documents: {percentage}"
+alert = 90
+warning = 75
+[block.theme_overrides]
+idle_bg = "#d79921"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+[block.theme_overrides]
+idle_bg = "#83a598"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "cpu"
+interval = 1
+[block.theme_overrides]
+idle_bg = "#83a598"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "sound"
+[block.theme_overrides]
+idle_bg = "#458588"
+idle_fg = "#1d2021"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+on_click = "sh /home/lerusse/.config/i3status-rust/scripts/popup-cal.sh --popup &"
+[block.theme_overrides]
+idle_bg = "#928374"
+idle_fg = "#1d2021"
